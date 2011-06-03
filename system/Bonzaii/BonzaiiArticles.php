@@ -344,8 +344,11 @@ class BonzaiiArticles {
     ";
     $article['tags'] = $this->app['db']->fetchAll($query, array($article['id']));
 
-    foreach (glob($this->app['articles.image_upload_path'] . $article['id'] . '.{jpg,gif,png}', GLOB_BRACE) as $file) {
-      $article['image'] = $this->app['articles.image_path'] . basename($file);
+    $files = glob($this->app['articles.image_upload_path'] . $article['id'] . '.{jpg,gif,png}', GLOB_BRACE);
+    if ($files) {
+      foreach ($files as $file) {
+        $article['image'] = $this->app['articles.image_path'] . basename($file);
+      }
     }
 
     return $article;

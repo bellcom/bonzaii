@@ -28,4 +28,8 @@ $(function(){
     $('#message').delay(1200).fadeOut(1000);
   }
 
+  // the letter-spacing is greater in ff for some reason...
+  if ($.browser.mozilla) {
+    $('h1').css('letter-spacing', '-6px');
+  }
 });
