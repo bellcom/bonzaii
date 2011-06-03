@@ -20,8 +20,8 @@ $app->register(new Silex\Extension\DoctrineExtension(), array(
     'driver' => 'pdo_sqlite',
     'path' => __DIR__ . '/../data/bonzaii.db',
   ),
-  'db.dbal.class_path' => __DIR__ . '/vendor/doctrine-dbal/',
-  'db.common.class_path' => __DIR__ . '/vendor/doctrine-dbal/',
+  'db.dbal.class_path' => __DIR__ . '/vendor/doctrine-dbal/lib/',
+  'db.common.class_path' => __DIR__ . '/vendor/doctrine-dbal/lib/vendor/doctrine-common/lib/',
 ));
 
 // emailing
