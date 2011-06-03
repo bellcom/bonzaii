@@ -1,0 +1,45 @@
+table {
+  margin: 10px;
+  width: 100%;
+  border-spacing: 0;
+}
+thead {
+  background-image: url(/fx/img/design/stripe.png);
+}
+thead th {
+  text-align: left;
+}
+thead th:first-child {
+  width: 20px;
+}
+tbody th {
+  padding-top: 6px;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 2px;
+  border-collapse: collapse;
+}
+
+td input[type="password"],
+td input[type="text"] {
+  width: 300px;
+  border: 1px solid #CCC;
+  padding: 2px;
+}
+td.buttons {
+  text-align: right;
+}
+
+textarea.tinymce {
+  width: 600px;
+  height: 400px;
+}
+textarea.tinymce[name="manchet"] {
+  height: 180px;
+}
+
+.mceWrapper {
+  text-shadow: none;
+}

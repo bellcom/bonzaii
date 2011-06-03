@@ -1,0 +1,5 @@
+data/bonzaii.db
+data/cache/*
+logs/*
+sessions/*
+vendor/Silex/src

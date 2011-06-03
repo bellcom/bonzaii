@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Bellcom Open Source ApS er en dansk virksomhed indenfor udvikling og leverance af open source baserede løsninger til vidensformidling, PR, marketing og salg." />
+<meta name="keywords" content="open source, CMS, CRM, remote backup, integration, internet udvikling, Google optimering, osl, drupal, ez, oscommerce, ehandel, e-handel, sugarCRM, åbne standarder, ip-telefoni, udvikling, hosting" />
+<link rel="shortcut icon" href="/fx/img/design/favicon.ico" type="image/x-icon" />
+<title>{% block title %}{% endblock %}bellcom open source aps</title>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="/fx/scripts/bonzaii.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" media="all" href="/fx/css/less.css" />
+{% block header %}{% endblock %}
+</head>
+<body lang="da">
+
+  <header>
+    <div>
+      <h1><a href="/">{{ title }}</a></h1>
+      <p>{{ swag_line }}</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="/hvem">hvem <span>er vi ?</span></a></li>
+        <li><a href="/hvad">hvad <span>laver vi ?</span></a></li>
+        <li><a href="/hvor">hvor<span>dan får man fat i os ?</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {% block teaser %}{% endblock %}
+
+  <section id="context">
+
+    {% if message %}
+    <div id="message">
+      {{ message }}
+    </div>
+    {% endif %}
+
+    <div class="wrapper">
+      {% block content %}{% endblock %}
+    </div>
+    {% block aside %}{% endblock %}
+  </section>
+
+  <footer>
+    <address>bellcom open source aps · bredgade 20, 1 6000 kolding · tlf: +45 7026 0085 · email: <a href="mailto:salg@bellcom.dk">salg@bellcom.dk</a> · cvr: xxxxxxx · <a href="http://support.bellcom.dk/index.php?_m=news&_a=view">driftstatus</a></address>
+  </footer>
+
+</body>
+</html>

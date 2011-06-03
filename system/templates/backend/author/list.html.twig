@@ -1,0 +1,32 @@
+{% extends layout %}
+
+{% block content %}
+» <a href="/admin/author/add">add new author</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>twitter</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for author in authors %}
+    <tr>
+      <td>{{ author.id }}</td>
+      <td>{{ author.name }}</td>
+      <td><a href="mailto:{{ author.email }}">{{ author.email }}</a></td>
+      <td><a href="https://twitter.com/{{ author.twitter }}">{{ author.twitter }}</a></td>
+      <td>
+        <a href="/admin/author/delete/{{ author.id }}" rel="post.json">x</a> |
+        <a href="/admin/author/edit/{{ author.id }}">e</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

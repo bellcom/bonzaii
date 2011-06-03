@@ -1,0 +1,27 @@
+    <article>
+    {% if context == 'teaser' %}
+      <h2><a href="/article/{{ article.slug }}">{{ article.title }}</a></h2>
+    {% else %}
+      <h2>{{ article.title }}</h2>
+    {% endif %}
+      <section class="info">
+        <time datetime="{{ article.datetime }}">d: {{ article.date }}</time>
+        <span class="author"><a href="mailto:{{ article.author_email }}" title="kontakt {{ article.author }}">{{ article.author }}</a></span>
+        <span class="tags">
+          {% for tag in article.tags %}
+            <a href="/articles/tagged/{{ tag.name }}">{{ tag.name }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </span>
+      </section>
+    {% if article.image %}
+      <div class="img">
+        <img src="{{ article.image }}" title="" alt="" />
+        <!-- span>©{{ article.author }}</span -->
+      </div>
+    {% endif %}
+    {% if context == 'teaser' %}
+      {{ article.teaser|raw }}
+    {% else %}
+      {{ article.content|raw }}
+    {% endif %}
+    </article>

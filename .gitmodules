@@ -1,0 +1,9 @@
+[submodule "system/vendor/Twig"]
+	path = system/vendor/Twig
+	url = https://github.com/fabpot/Twig.git
+[submodule "system/vendor/swiftmailer"]
+	path = system/vendor/swiftmailer
+	url = https://github.com/swiftmailer/swiftmailer.git
+[submodule "system/vendor/doctrine-dbal"]
+	path = system/vendor/doctrine-dbal
+	url = git://github.com/doctrine/dbal.git

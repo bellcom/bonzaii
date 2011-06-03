@@ -1,0 +1,13 @@
+  <aside>
+  {% if tweets %}
+    <ul id="tweets">
+      <li><h3>tweets</h3></li>
+      {% for tweet in tweets  %}
+      <li>
+        <span>{{ tweet.created_at }}</span>
+        {{ tweet.text|raw }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </aside>

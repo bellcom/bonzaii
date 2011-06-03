@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href="/fx/img/design/favicon.ico" type="image/x-icon" />
+<title>{% block title %}{% endblock %}bellcom open source aps</title>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+<script type="text/javascript" src="/fx/scripts/bonzaii.js"></script>
+<script type="text/javascript" src="/fx/scripts/backend.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" media="all" href="/fx/css/less.css" />
+<link rel="stylesheet" media="all" href="/fx/css/backend.css" />
+{% block head %}{% endblock %}
+</head>
+<body lang="da">
+
+  <header>
+    <div>
+      <h1>{{ title }}</h1>
+      <p>{{ swag_line }}</p>
+    </div>
+
+  {% if no_nav == false %}
+    <nav>
+      <ul>
+        <li><a href="/admin/article">article <span>maintainance</span></a></li>
+        <li><a href="/admin/author">author <span>maintainance</span></a></li>
+        <li><a href="/admin/tag">tag <span>maintainance</span></a></li>
+      </ul>
+    </nav>
+  {% endif %}
+  </header>
+
+  {% block teaser %}{% endblock %}
+
+  <section id="context">
+
+    {% if message %}
+    <div id="message">
+      {{ message }}
+    </div>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+    {% block aside %}{% endblock %}
+  </section>
+
+  <footer>
+    <address>bellcom open source aps · bredgade 20, 1 6000 kolding · tlf: +45 7026 0085 · email: <a href="mailto:salg@bellcom.dk">salg@bellcom.dk</a> · cvr: xxxxxxx</address>
+  </footer>
+
+</body>
+</html>

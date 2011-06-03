@@ -1,0 +1,71 @@
+{% extends layout %}
+
+{% block title%}kontakt os / {% endblock %}
+
+{% block teaser %}
+  <section id="teaser">
+    <img src="/fx/img/design/grass-house-trans.png" />
+    <p>Kontakt til bellcom kan gøres på to måder:</p>
+    <ol>
+      <li>af dem der kan</li>
+      <li>af dem der ikke kan</li>
+    </ol>
+    <p>Alle der kan, kan bruge formularen herunder og så vil vi vende tilbage så snart vi har mulighed for det.</p>
+    <p>I andre må benytte telefonnummeret nederest på siden her.</p>
+  </section>
+{% endblock %}
+
+{% block content %}
+
+<article>
+  <h2>kontaktformular</h2>
+  <form action="/hvor" method="post">
+    <table>
+      <tr>
+        <th>navn: </th>
+        <td><input type="text" name="name" class="required" /></td>
+      </tr>
+      <tr>
+        <th>email: </th>
+        <td><input type="email" name="email" class="required" /></td>
+      </tr>
+      <tr>
+        <th>firma: </th>
+        <td><input type="text" name="company" class="" /></td>
+      </tr>
+      <tr>
+        <th>emne: </th>
+        <td><input type="text" name="subject" class="" /></td>
+      </tr>
+      <tr>
+        <th>besked: </th>
+        <td><textarea name="message" class="required"></textarea></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <input type="submit" value="Send besked" />
+          <input type="hidden" value="" name="qemu" id="qemu" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</article>
+
+{% endblock %}
+
+{% block aside %}
+  <aside>
+    <ul id="">
+      <li><h3>medarbejdere</h3></li>
+      <li>
+        <span>henrik farre</span>
+         ham med colaen, det lange hård og ez
+      </li>
+      <li>
+        <span>ulrik nielsen</span>
+        laver lidt af hvert, lidt til og hvad mere..
+      </li>
+    </ul>
+  </aside>
+{% endblock %}

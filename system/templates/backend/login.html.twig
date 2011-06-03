@@ -1,0 +1,21 @@
+{% extends layout %}
+{% block content %}
+
+<form action="/admin/account/login" method="post">
+  <table>
+    <tr>
+      <th>username</th>
+      <td><input type="text" name="username" value="" /></td>
+    </tr>
+    <tr>
+      <th>password</th>
+      <td><input type="password" name="password" value="" /></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><input type="submit" name="sbm" value="login" /></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

@@ -1,0 +1,515 @@
+/*	Less Framework 4
+	http://lessframework.com
+	by Joni Korpi
+	License: http://creativecommons.org/licenses/MIT/	*/
+
+
+/*	Resets
+	------	*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup,
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+	display: block;
+}
+
+a img {border: 0;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 68px;
+	line-height: 72px;
+  font-family: 'Covered By Your Grace', Georgia, serif;
+}
+
+.large, h2 {
+	font-size: 42px;
+	line-height: 48px;
+  font-family: 'Covered By Your Grace', Georgia, serif;
+  font-weight: normal;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+  font-family: 'Covered By Your Grace', Georgia, serif;
+  font-weight: normal;
+}
+
+.big, h4 {
+	font-size: 22px;
+	line-height: 30px;
+  font-family: 'Covered By Your Grace', Georgia, serif;
+  font-weight: normal;
+}
+
+body {
+	font: 12px/18px Georgia, serif;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+
+/* Selection colours (easy to forget) */
+
+::selection { background: rgb(255,255,158); }
+::-moz-selection { background: rgb(255,255,158); }
+img::selection { background: transparent; }
+img::-moz-selection	{ background: transparent; }
+body { -webkit-tap-highlight-color: rgb(255,255,158); }
+
+
+
+/*  Default Layout: 992px.
+    Gutters: 24px.
+    Outer margins: 48px.
+    Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+
+body {
+  margin: 20px auto;
+	width: 896px;
+/*	padding: 72px 48px 84px;*/
+	background: rgb(232,232,232);
+	color: rgb(60,60,60);
+	-webkit-text-size-adjust: 100%; /* Stops Mobile Safari from auto-adjusting font-sizes */
+  text-shadow: 1px 1px white;
+}
+a {
+  color: inherit;
+}
+h1 a, h2 a, h3 a {
+  text-decoration: none;
+}
+
+ol {
+  margin: 5px 0 5px 200px;
+}
+
+header {
+  width: 896px;
+  height: 110px;
+}
+header div {
+  width: 620px;
+  float: left;
+}
+
+nav {
+  width: 252px;
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: block;
+  margin-bottom: 5px;
+  background-color: #fa0;
+  padding-left: 20px;
+}
+nav a {
+  font-family: 'Covered By Your Grace', Georgia, serif;
+  font-weight: normal;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.6em;
+  display: block;
+  background-color: #78a714;
+  padding: 4px;
+  text-shadow: none;
+}
+nav a:hover {
+  background-color: #fa0;
+  color: rgb(60,60,60);
+}
+nav a span {
+  display: none;
+}
+nav a:hover span {
+  display: inline-block;
+}
+
+section#teaser {
+  width: 866px;
+  border: 2px solid #78a714;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 15px;
+  padding: 5px  5px 5px 25px;
+  background-image: url(/fx/img/design/stripe.png);
+  min-height: 110px;
+}
+section#teaser img {
+  width: 160px;
+  float: left;
+  margin-right: 20px;
+}
+
+#context {
+  width: 896px;
+}
+
+#context div.wrapper {
+  float: left;
+  width: 620px;
+}
+#context article {
+  background-image: url(/fx/img/design/body-bg.png);
+  padding: 5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+#context article p {
+  margin-bottom: 5px;
+}
+article a {
+  color: #000;
+}
+article .img {
+  float: right;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border: 2px solid #ccc;
+  overflow: hidden;
+  background-image: url(/fx/img/design/stripe.png);
+}
+article .img img {
+  width: 300px;
+}
+article .img span {
+  text-align: right;
+  display: block;
+  padding: 0 4px 2px 0;
+}
+article section.info {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-image: url(/fx/img/design/stripe.png);
+  padding-left: 10px;
+}
+article section.info time:after,
+article section.info span:after {
+  content: " · ";
+}
+article section.info span.tags:after {
+  content: "";
+}
+article ul {
+  margin-left: 22px;
+  list-style: square;
+}
+
+#context aside {
+  vertical-align: top;
+  width: 252px;
+  float: right;
+}
+#context h2 {
+  background-image: url(/fx/img/design/stripe.png);
+  padding: 2px 2px 2px 10px;
+}
+
+aside ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+aside li {
+  padding: 5px;
+}
+aside ul li:first-child {
+  padding-top: 0;
+}
+aside ul li:last-child {
+  border-bottom: 2px solid #78a714;
+}
+
+aside ul li h3 {
+  border-bottom: 2px solid #78a714;
+  margin-top: 0;
+  padding-top: 0;
+}
+aside ul li span {
+  display: block;
+}
+
+footer {
+  width: 896px;
+  display: block;
+  overflow: hidden;
+  background-image: url(/fx/img/design/stripe.png);
+  padding: 5px;
+  text-align: center;
+  text-shadow: 1px 1px white;
+}
+
+/* contact form */
+form {
+  margin: 20px 5px 20px 5px;
+}
+form table {
+  width: 100%;
+}
+table th {
+  width: 70px;
+  text-align: right;
+  padding-right: 5px;
+}
+table th, table td {
+  vertical-align: top;
+}
+textarea, input[type="text"], input[type="email"] {
+  border: 1px solid #78a714;
+  width: 200px;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+}
+input#qemu {
+  display: none;
+}
+
+#message {
+  border: 2px solid #fa0;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 900;
+}
+
+/*  Tablet Layout: 768px.
+    Gutters: 24px.
+    Outer margins: 28px.
+    Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	body {
+		width: 712px;
+/*		padding: 48px 28px 60px;*/
+	}
+
+  header,
+    #context,
+  footer {
+   width: 712px;
+  }
+  section#teaser {
+    width: 682px;
+  }
+  header {
+    height: 150px;
+  }
+  header div {
+    width: 712px;
+    float: none;
+  }
+  nav {
+    padding-top: 15px;
+    width: 712px;
+    float: none;
+    overflow: hidden;
+  }
+  nav ul {
+    width: auto;
+  }
+  nav ul li {
+    float: left;
+    margin-right: 20px;
+  }
+  nav ul li a span {
+    display: inline-block;
+  }
+  #context div.wrapper {
+    width: 528px;
+  }
+  #context aside {
+    width: 160px;
+  }
+
+}
+
+
+
+/*  Mobile Layout: 320px.
+    Gutters: 24px.
+    Outer margins: 34px.
+    Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+	body {
+		width: 252px;
+	}
+  h1 { font-size: 28px; line-height: 32px; }
+  h2 { font-size: 20px; }
+  h3 { font-size: 18px; }
+  h4 { font-size: 16px; }
+  ol {
+    margin: 0;
+    margin-left: 20px;
+  }
+  header,
+  #context,
+  footer {
+   width: 252px;
+  }
+  section#teaser {
+    width: 222px;
+  }
+  section#teaser img {
+    display:none;
+  }
+  form th, form td {
+    display:block;
+    float: left;
+    width: 100%;
+  }
+  form th {
+    padding:0;
+    text-align: left;
+  }
+  header {
+    height: 160px;
+  }
+  header div {
+    width: 252px;
+    float: none;
+  }
+  nav {
+    padding-top: 15px;
+    width: 252px;
+    float: none;
+    overflow: hidden;
+  }
+  nav ul {
+    width: 252px;
+  }
+  nav ul li {
+    float: left;
+    margin-right: 0;
+    margin-bottom: 1px;
+    width: 232px;
+  }
+  nav ul li a {
+    display: block;
+  }
+  nav ul li a span {
+    display: inline-block;
+  }
+  #context div.wrapper {
+    width: 252px;
+    float: none;
+  }
+  #context aside {
+    width: 252px;
+    float: none;
+  }
+  article .img img {
+    width: 240px;
+  }
+}
+
+
+
+/*  Wide Mobile Layout: 480px.
+    Gutters: 24px.
+    Outer margins: 22px.
+    Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	body {
+		width: 436px;
+	}
+  h1 { font-size: 40px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 20px; }
+  h4 { font-size: 16px; }
+  header,
+  #context,
+  footer {
+   width: 436px;
+  }
+  section#teaser {
+    width: 406px;
+  }
+  header {
+    height: 110px;
+  }
+  header div {
+    width: 436px;
+  }
+  nav {
+    padding-top: 15px;
+    width: 436px;
+    float: none;
+    overflow: hidden;
+  }
+  nav ul {
+    width: auto;
+  }
+  nav ul li {
+    padding-left:0;
+    float: left;
+    margin-right: 5px;
+    width: auto;
+  }
+  nav ul li a span {
+    display: inline-block;
+  }
+  #context div.wrapper {
+    width: 436px;
+    float: none;
+  }
+  #context aside {
+    width: 436px;
+    float: none;
+  }
+}
+
+
+/*  Retina media query.
+    Overrides styles for devices with a
+    device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	body {}
+}

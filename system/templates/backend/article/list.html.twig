@@ -1,0 +1,38 @@
+{% extends layout %}
+
+{% block head %}
+<script type="text/javascript" src="/fx/scripts/article.js"></script>
+{% endblock %}
+
+{% block content %}
+» <a href="/admin/article/add">add new article</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>title</th>
+      <th>type</th>
+      <th>author</th>
+      <th>created at</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for article in articles %}
+    <tr>
+      <td>{{ article.id }}</td>
+      <td><a href="/article/{{ article.slug }}" title="go to the article">{{ article.title }}</a></td>
+      <td>{{ article.type }}</td>
+      <td>{{ article.author }}</td>
+      <td>{{ article.datetime }}</td>
+      <td>
+        <a href="/admin/article/delete/{{ article.id }}" rel="post.json">x</a> |
+        <a href="/admin/article/edit/{{ article.id }}">e</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

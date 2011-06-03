@@ -1,0 +1,41 @@
+{% extends layout %}
+
+{% block head %}
+<script type="text/javascript" src="/fx/scripts/author.js"></script>
+{% endblock %}
+
+{% block content %}
+<form action="/admin/author/add" method="post" id="author-form">
+  <table>
+    <tr>
+      <th>name</th>
+      <td><input name="name" type="text" value="{{ author.name }}" /></td>
+    </tr>
+    <tr>
+      <th>email</th>
+      <td><input name="email" type="email" value="{{ author.email }}" /></td>
+    </tr>
+    <tr>
+      <th>password</th>
+      <td><input name="password" type="password" value="" /></td>
+    </tr>
+    <tr>
+      <th>twitter</th>
+      <td><input name="twitter" type="text" value="{{ author.twitter }}" /></td>
+    </tr>
+    <tr>
+      <th>description</th>
+      <td><textarea name="content">{{ author.content }}</textarea></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <input name="smb" type="submit" value="Save" />
+      {% if author.id %}
+        <input type="hidden" name="id" value="{{ author.id }}" />
+      {% endif %}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
