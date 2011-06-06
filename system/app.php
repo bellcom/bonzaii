@@ -59,7 +59,7 @@ else {
   $app['twig']->addGlobal('layout', 'layout-frontend.html.twig');
   $app->register(new Bonzaii\TweetsExtension(), array(
     'tweets.limit' => 5,
-    'tweets.search' => 'bellcomdk'
+    'tweets.search' => 'bellcomdk',
   ));
 
   require __DIR__ . '/frontend.php';

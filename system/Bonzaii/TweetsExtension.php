@@ -12,6 +12,10 @@ class TweetsExtension implements ExtensionInterface {
         $app['tweets.limit'] = 10;
       }
 
+      if (!isset($app['tweets.cache_dir'])) {
+        $app['tweets.cache_dir'] = __DIR__ . '/../../data/cache/';
+      }
+
       return new BonzaiiTweets($app);
     });
   }
