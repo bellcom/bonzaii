@@ -1,0 +1,26 @@
+{% extends layout %}
+{% block content %}
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>article count</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for tag in tags %}
+    <tr>
+      <td>{{ tag.id }}</td>
+      <td>{{ tag.name }}</td>
+      <td>{{ tag.article_count }}</td>
+      <td>
+        <a href="/admin/tag/delete/{{ tag.id }}" rel="post.json">x</a> |
+        <a href="/admin/tag/edit/{{ tag.id }}">e</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

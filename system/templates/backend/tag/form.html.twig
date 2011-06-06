@@ -1,0 +1,25 @@
+{% extends layout %}
+
+{% block head %}
+<script type="text/javascript" src="/fx/scripts/tag.js"></script>
+{% endblock %}
+
+{% block content %}
+<form action="/admin/tag/add" method="post" id="tag-form">
+  <table>
+    <tr>
+      <th>name</th>
+      <td><input name="name" type="text" value="{{ tag.name }}" /></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <input name="smb" type="submit" value="Save" />
+      {% if tag.id %}
+        <input type="hidden" name="id" value="{{ tag.id }}" />
+      {% endif %}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
