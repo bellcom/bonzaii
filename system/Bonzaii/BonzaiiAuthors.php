@@ -46,7 +46,14 @@ class BonzaiiAuthors {
       $data['content'] = $request->get('content');
     }
 
-    return $this->app['db']->insert('authors', $data);
+    if ($this->app['db']->insert('authors', $data)) {
+      $id = $this->app['db']->fetchColumn('SELECT last_insert_rowid() AS last_insert_rowid');
+
+      $this->storeImage($id, $request->files->get('image'));
+      return true;
+    }
+
+    return false;
   }
 
 
@@ -73,9 +80,12 @@ class BonzaiiAuthors {
       $data['content'] = $request->get('content');
     }
 
-    return $this->app['db']->update('authors', $data, array(
+    $this->app['db']->update('authors', $data, array(
       'id' => $request->get('id')
     ));
+    $this->storeImage($request->get('id'), $request->files->get('image'));
+
+    return true;
   }
 
     /**
@@ -131,4 +141,17 @@ class BonzaiiAuthors {
   public function doDelete(array $criteria = array()) {
     return $this->app['db']->delete('authors', $criteria);
   }
+
+  protected function storeImage($aid, $file) {
+    $extentions = array(
+      'image/jpeg',
+      'image/png',
+      'image/gif',
+    );
+
+    if ($file && $file->isValid() && in_array($file->getMimeType(), $extentions)) {
+      $file->move($this->app['authors.image_upload_path'], 'author_'.$aid . $file->getExtension());
+    }
+  }
+
 }

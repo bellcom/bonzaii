@@ -51,6 +51,12 @@ $app->register(new Bonzaii\ArticlesExtension(), array(
 ));
 $app->register(new Bonzaii\RedirectsExtension(), array());
 
+$app->register(new Bonzaii\AuthorsExtension(), array(
+  'authors.image_upload_path' => __DIR__ . '/../public_html/fx/img/',
+  'authors.image_path' => '/fx/img/',
+));
+
+
 // poor mans admin switch
 if (strpos($_SERVER['REQUEST_URI'], '/admin/') === 0) {
   $app['twig']->addGlobal('layout', 'backend/layout-backend.html.twig');

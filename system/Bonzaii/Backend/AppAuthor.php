@@ -27,6 +27,7 @@ $app->get('/admin/author/add', function () use ($app) {
   return $template->render(array(
     'title' => 'bonzaii',
     'swag_line' => 'ze admin section » add new author',
+    'maxsize' => ini_get('post_max_size'),
   ));
 });
 
@@ -57,7 +58,8 @@ $app->get('/admin/author/edit/{author_id}', function ($author_id) use ($app) {
   return $template->render(array(
     'title' => 'bonzaii',
     'swag_line' => 'ze admin section » edit author',
-    'author' => $author
+    'author' => $author,
+    'maxsize' => ini_get('post_max_size'),
   ));
 });
 

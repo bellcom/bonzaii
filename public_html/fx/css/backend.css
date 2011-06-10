@@ -43,3 +43,7 @@ textarea.tinymce[name="manchet"] {
 .mceWrapper {
   text-shadow: none;
 }
+
+form {
+  background-image: url(/fx/img/design/body-bg.png);
+}
