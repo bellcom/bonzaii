@@ -244,6 +244,7 @@ aside ul {
 }
 aside li {
   padding: 5px;
+  overflow: hidden;
 }
 aside ul li:first-child {
   padding-top: 0;
