@@ -1,0 +1,40 @@
+{% extends layout %}
+
+{% block head %}
+<script type="text/javascript" src="/fx/scripts/redirect.js"></script>
+{% endblock %}
+
+{% block content %}
+» <a href="/admin/redirect/add">add new redirect</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>from</th>
+      <th>to</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for redirect in redirects %}
+    <tr>
+      <td>{{ redirect.id }}</td>
+      <td>{{ redirect.from_url }}</td>
+      <td>
+      {% if redirect.to_article_id %}
+        <a href="/admin/article/edit/{{ redirect.to_article_id }}">#{{ redirect.to_article_id }}</a>
+      {% endif %}
+      {% if redirect.to_url %}
+        <a href="{{ redirect.to_url }}">{{ redirect.to_url }}</a>
+      {% endif %}
+      </td>
+      <td>
+        <a href="/admin/redirect/delete/{{ redirect.id }}" rel="post.json">x</a> |
+        <a href="/admin/redirect/edit/{{ redirect.id }}">e</a>
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

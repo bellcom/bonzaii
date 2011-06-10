@@ -1,0 +1,39 @@
+{% extends layout %}
+
+{% block content %}
+<form action="/admin/redirect/add" method="post" id="redirect-form">
+  <table>
+    <tr>
+      <th>from</th>
+      <td>
+        <input name="from_url" type="text" value="{{ redirect.from_url }}" />
+        <p>leave out the first "/" and if the request starts with a "?" leave that out as well</p>
+      </td>
+    </tr>
+    <tr>
+      <th>to static page</th>
+      <td><input name="to_url" type="text" value="{{ redirect.to_url }}" /></td>
+    </tr>
+    <tr>
+      <th>to article/page</th>
+      <td>
+        <select name="to_article_id">
+          <option value="">choose target</option>
+        {% for article in articles %}
+          <option value="{{ article.id }}"{% if article.id == redirect.to_article_id %} selected="selected"{% endif %}>{{ article.title }} (#{{ article.id }})</option>
+        {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>
+        <input name="smb" type="submit" value="Save" />
+      {% if redirect.id %}
+        <input type="hidden" name="id" value="{{ redirect.id }}" />
+      {% endif %}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

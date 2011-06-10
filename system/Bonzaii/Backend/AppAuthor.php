@@ -3,6 +3,7 @@
  * Author app handler.
  * @package bonzaii
  */
+use Symfony\Component\HttpFoundation\Response;
 
 
 $app->get('/admin/author', function () use ($app) {

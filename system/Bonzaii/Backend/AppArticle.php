@@ -1,5 +1,7 @@
 <?php
 
+use Symfony\Component\HttpFoundation\Response;
+
 
 $app->get('/admin/article', function () use ($app) {
   $template = $app['twig']->loadTemplate('backend/article/list.html.twig');

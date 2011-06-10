@@ -104,3 +104,17 @@ $app->get('/article/{slug}', function($slug) use ($app){
 $app->post('/api', function() use ($app){
   return "comming soon...";
 });
+
+$app->error(function(Exception $e) use ($app){
+
+  if ($e->getStatusCode() == 404) {
+    $path = trim($app['request']->getRequestUri(), '/');
+    if ($to = $app['redirects']->find($path)) {
+      return $app->redirect($to);
+    }
+
+    error_log('This path has no march: "' . $path . '"');
+  }
+
+  return $app->redirect('/');
+});

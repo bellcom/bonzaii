@@ -49,6 +49,7 @@ $app->register(new Bonzaii\ArticlesExtension(), array(
   'articles.image_upload_path' => __DIR__ . '/../public_html/fx/img/',
   'articles.image_path' => '/fx/img/',
 ));
+$app->register(new Bonzaii\RedirectsExtension(), array());
 
 // poor mans admin switch
 if (strpos($_SERVER['REQUEST_URI'], '/admin/') === 0) {
@@ -59,7 +60,7 @@ else {
   $app['twig']->addGlobal('layout', 'layout-frontend.html.twig');
   $app->register(new Bonzaii\TweetsExtension(), array(
     'tweets.limit' => 5,
-    'tweets.search' => 'bellcomdk',
+    'tweets.search' => 'bellcomdk'
   ));
 
   require __DIR__ . '/frontend.php';

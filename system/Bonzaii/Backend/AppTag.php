@@ -3,6 +3,7 @@
  * Tag app handler.
  * @package bonzaii
  */
+use Symfony\Component\HttpFoundation\Response;
 
 $app->get('/admin/tag', function () use ($app) {
   $template = $app['twig']->loadTemplate('backend/tag/list.html.twig');
