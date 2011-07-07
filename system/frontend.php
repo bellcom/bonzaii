@@ -4,7 +4,7 @@
 $app->get('/', function() use ($app){
   $template = $app['twig']->loadTemplate('index.html.twig');
   return $template->render(array(
-    'title' => 'bellcom open source',
+    'title' => 'mean aps',
     'swag_line' => 'home is where the heart is',
     'tweets' => $app['tweets']->getList(),
     'articles' => $app['articles']->getList(10)
