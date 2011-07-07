@@ -269,9 +269,6 @@ aside ul li h3 {
 aside ul li span {
   display: block;
 }
-aside #employees a {
-  font-weight: 900;
-}
 
 footer {
   width: 896px;
@@ -298,7 +295,9 @@ table th {
 table th, table td {
   vertical-align: top;
 }
-textarea, input[type="text"], input[type="email"] {
+textarea,
+input[type="text"],
+input[type="email"] {
   border: 1px solid #78a714;
   width: 200px;
 }
@@ -315,6 +314,20 @@ input#qemu {
   padding: 10px;
   margin: 10px;
   font-weight: 900;
+}
+
+#employees li {
+  overflow: hidden
+}
+
+#employees a {
+  font-weight: 900;
+}
+
+#employees img {
+  width: 50px;
+  float: right;
+  margin-left: 10px;
 }
 
 /*  Tablet Layout: 768px.

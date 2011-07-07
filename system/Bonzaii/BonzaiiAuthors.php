@@ -119,6 +119,14 @@ class BonzaiiAuthors {
     ";
 
     $records = $this->app['db']->fetchAll($query);
+
+    foreach ($records as $key => $data) {
+      $image = 'author_' . $data['id'] . '.jpg';
+      if (is_file($this->app['authors.image_upload_path'] . $image)) {
+        $records[$key]['image'] = $this->app['authors.image_path'] . $image;
+      }
+    }
+
     if ($return_one) {
       if (count($records)) {
         return array_shift($records);

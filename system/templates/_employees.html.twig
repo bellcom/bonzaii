@@ -3,6 +3,9 @@
       <li><h3>medarbejdere</h3></li>
     {% for item in employees %}
       <li>
+      {% if item.image %}
+        <img src="{{ item.image }}" alt="" />
+      {% endif %}
         <span>
           {{ item.name }}
       {% if item.twitter %}
