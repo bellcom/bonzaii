@@ -7,7 +7,8 @@ $app->get('/', function() use ($app){
     'title' => 'mean aps',
     'swag_line' => 'home is where the heart is',
     'tweets' => $app['tweets']->getList(),
-    'articles' => $app['articles']->getList(10)
+    'articles' => $app['articles']->getList(10),
+    'highlight' => $app['articles']->getListByTag('highlight'),
   ));
 });
 
@@ -96,6 +97,7 @@ $app->get('/article/{slug}', function($slug) use ($app){
     'swag_line' => '',
     'article' => $article,
     'related' => $app['articles']->related($article['author_id']),
+    'highlight' => $app['articles']->getListByTag('highlight'),
   ));
 });
 
