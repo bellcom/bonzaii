@@ -110,6 +110,7 @@ h1 a, h2 a, h3 a {
 ol {
   margin: 5px 0 5px 20px;
 }
+#teaser ul,
 #teaser ol {
   margin-left: 200px;
 }
@@ -175,9 +176,7 @@ section#teaser img {
   float: left;
   margin-right: 20px;
 }
-section#teaser ul {
-  margin-left: 20px;
-}
+
 section#teaser ul li {
   list-style: square;
 }
