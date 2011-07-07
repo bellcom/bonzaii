@@ -4,7 +4,7 @@
 $app->get('/', function() use ($app){
   $template = $app['twig']->loadTemplate('index.html.twig');
   return $template->render(array(
-    'title' => 'mean aps',
+    'title' => 'Mean IT ApS',
     'swag_line' => 'home is where the heart is',
     'tweets' => $app['tweets']->getList(),
     'articles' => $app['articles']->getList(10),
@@ -17,7 +17,7 @@ $app->get('/hvem', function() use ($app){
   $article = $app['articles']->get('hvem');
 
   return $template->render(array(
-    'title' => 'hvem er vi så',
+    'title' => 'Hvem er vi så',
     'swag_line' => "- top of the world ma'",
     'tweets' => $app['tweets']->getList(),
     'article' => $article
@@ -29,7 +29,7 @@ $app->get('/hvad', function() use ($app){
   $article = $app['articles']->get('hvad');
 
   return $template->render(array(
-    'title' => 'hvad vi laver',
+    'title' => 'Hvad vi laver',
     'swag_line' => "for det sker faktisk - og ikke så sjældent endda",
     'tweets' => $app['tweets']->getList(),
     'article' => $article
@@ -39,7 +39,7 @@ $app->get('/hvad', function() use ($app){
 $app->get('/hvor', function() use ($app){
   $template = $app['twig']->loadTemplate('contact.html.twig');
   return $template->render(array(
-    'title' => 'hvordan vi kontaktes',
+    'title' => 'Hvordan vi kontaktes',
     'swag_line' => '... e.t. phone home ...',
     'employees' => $app['authors']->get()
   ));
