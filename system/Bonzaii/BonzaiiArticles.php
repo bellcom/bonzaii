@@ -31,6 +31,7 @@ class BonzaiiArticles {
 
   public function update() {
     $request = $this->app['request'];
+
     if (false == $request->get('id', false)) {
       return false;
     }
@@ -48,6 +49,8 @@ class BonzaiiArticles {
 
     $this->storeImage($id, $request->files->get('image'));
     $this->tagArticle($id, $request->get('tags'));
+
+    return true;
   }
 
 

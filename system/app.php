@@ -117,15 +117,24 @@ $app->before(function() use ($app) {
  * here we use the redirects bundle to handle any known redirects
  */
 $app->error(function(Exception $e) use ($app){
-  if ($e->getStatusCode() == 404) {
-    $path = trim($app['request']->getRequestUri(), '/');
-    if ($to = $app['redirects']->find($path)) {
-      // send 301 to tell google and others that the page has moved.
-      return $app->redirect($to, 301);
+
+  $methods = get_class_methods($e);
+  if (isset($methods['getStatusCode'])) {
+    if ($e->getStatusCode() == 404) {
+      $path = trim($app['request']->getRequestUri(), '/');
+      if ($to = $app['redirects']->find($path)) {
+        // send 301 to tell google and others that the page has moved.
+        return $app->redirect($to, 301);
+      }
+      // send unknown requests to the error log, maby someone is watching
+      error_log('This path has no march: "' . $path . '"');
     }
-    // send unknown requests to the error log, maby someone is watching
-    error_log('This path has no march: "' . $path . '"');
   }
+  else{
+    error_log(__FILE__ . ' +' . __LINE__ . ' : ' . print_r($e->getMessage(), 1));
+    return '500';
+  }
+
   return $app->redirect('/');
 });
 
