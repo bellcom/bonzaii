@@ -175,6 +175,10 @@ section#teaser img {
   float: left;
   margin-right: 20px;
 }
+section#teaser ul li {
+  margin-left: 20px;
+  list-style: square;
+}
 
 #context {
   width: 896px;
@@ -263,6 +267,9 @@ aside ul li h3 {
 }
 aside ul li span {
   display: block;
+}
+aside #employees a {
+  font-weight: 900;
 }
 
 footer {

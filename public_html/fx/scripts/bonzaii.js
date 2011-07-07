@@ -32,4 +32,10 @@ $(function(){
   if ($.browser.mozilla) {
     $('h1').css('letter-spacing', '-6px');
   }
+
+  // send external links to new window
+  $('a[rel="external"]').click(function(event) {
+    window.open(this.href);
+    event.preventDefault();
+  });
 });

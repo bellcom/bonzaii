@@ -41,6 +41,7 @@ $app->get('/hvor', function() use ($app){
   return $template->render(array(
     'title' => 'hvordan vi kontaktes',
     'swag_line' => '... e.t. phone home ...',
+    'employees' => $app['authors']->get()
   ));
 });
 $app->post('/hvor', function() use ($app){

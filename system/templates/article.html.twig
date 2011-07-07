@@ -17,16 +17,9 @@
 
 {% block aside %}
   <aside>
-  {% if related %}
-    <ul id="">
-      <li><h3>flere indlæg fra {{ article.author }}</h3></li>
-    {% for item in related %}
-      <li>
-        <span>{{ item.date }}</span>
-        <a href="/article/{{ item.slug }}">{{ item.title }}</a>
-      </li>
-    {% endfor %}
-    </ul>
-  {% endif %}
+    {% include '_highlight.html.twig' with {
+      'headline' : 'flere indlæg fra ' ~ article.author ,
+      'highlight' : related
+    } %}
   </aside>
 {% endblock %}

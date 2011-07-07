@@ -1,6 +1,6 @@
   {% if highlight %}
-    <ul id="">
-      <li><h3>Standart løsninger</h3></li>
+    <ul>
+      <li><h3>{{ headline|default('Standart løsninger') }}</h3></li>
     {% for item in highlight %}
       <li>
         <span>{{ item.date }}</span>

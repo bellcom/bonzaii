@@ -111,7 +111,7 @@ class BonzaiiAuthors {
 
     $query = "
       SELECT
-        id, name, email, twitter
+        id, name, email, twitter, content
       FROM
         authors
       {$where}
