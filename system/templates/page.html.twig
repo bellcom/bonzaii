@@ -3,7 +3,7 @@
 {% block title%}{{ article.title }} / {% endblock %}
 
 {% block teaser %}
-  {% include '_teaser.html.twig' {
+  {% include '_teaser.html.twig' with {
     'teaser' : article.manchet
   } %}
 {% endblock %}
