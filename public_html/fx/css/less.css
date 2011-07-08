@@ -185,6 +185,7 @@ section#teaser ul li {
 
 #context {
   width: 896px;
+  overflow: hidden;
 }
 
 #context div.wrapper {
