@@ -47,7 +47,7 @@ class BonzaiiTweets {
             else {
               $url = $matches[0];
             }
-            return '<a href="https://twitter.com/' . $url . '" title="se mere på twitter" rel="twitter">' . $matches[0] . '</a>';
+            return '<a href="https://twitter.com/' . $url . '" title="se mere på twitter" rel="external">' . $matches[0] . '</a>';
           }, $text);
 
           $tweets[] = array(

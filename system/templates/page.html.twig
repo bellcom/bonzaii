@@ -3,12 +3,9 @@
 {% block title%}{{ article.title }} / {% endblock %}
 
 {% block teaser %}
-  <section id="teaser">
-    <img src="/fx/img/design/grass-house-trans.png" />
-  {% if article.manchet %}
-    {{ article.manchet|raw }}
-  {% endif %}
-  </section>
+  {% include '_teaser.html.twig' {
+    'teaser' : article.manchet
+  } %}
 {% endblock %}
 
 {% block content %}
